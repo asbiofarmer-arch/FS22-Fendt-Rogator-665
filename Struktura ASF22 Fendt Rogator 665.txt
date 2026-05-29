@@ -1,0 +1,145 @@
+Prawidłowa, kompletna Struktura moda
+ASF22 Fendt Rogator 665
+
+ASF22_Fendt_Rogator_665/
+├── Fendt/
+│     ├── Visuals
+│     │      ├── EliteFarming Window Sticker
+│     │      └── LoggingLogo.dds
+│     │
+│     ├── mirror.i3d
+│     └── mirror.i3d.shapes
+│
+├── GPS
+│     ├── gpsAntenna.i3d
+│     └── gpsAntenna.i3d.shapes
+│
+│── isariaProCompact
+│     ├── isariaProCompact.i3d
+│     └── isariaProCompact.i3d.shapes
+│     
+│
+│── Lua/
+│     ├── loader.lua
+│     ├── ManureSystemVehicle.lua
+│     ├── SprayerSectionControl.lua
+│     └── SprayerSectionControlHUD.lua
+│
+├── Models/
+│     ├── rogator.i3d
+│     ├── rogator.i3d.anim (**nie wiem co to jest i do czego to służy?**)
+│     ├── rogator.i3d.shapes
+│     ├── spotspray.i3d
+│     └── spotspray.i3d.shapes
+│
+├── SDK/
+│     ├── monitorTextures
+│     │         ├── decals.dds
+│     │         ├── iFARM_Horizontal_screen.dds
+│     │         ├── iFARM_Vertical_screen.dds
+│     │         └── screen.dds
+│     │
+│     ├── templates
+│     │         ├── iFARM_Horizontal_screen.psd (**nie wiem co to jest i do czego to służy?**)
+│     │         ├── iFARM_Horizontal_screen.xcf (**nie wiem co to jest i do czego to służy?**)
+│     │         ├── iFARM_Vertical_screen.psd (**nie wiem co to jest i do czego to służy?**)
+│     │         ├── iFARM_Vertical_screen.xcf (**nie wiem co to jest i do czego to służy?**)
+│     │         ├── screen.psd (**nie wiem co to jest i do czego to służy?**)
+│     │         └── screen.xcf (**nie wiem co to jest i do czego to służy?**)
+│     │
+│     ├── code.xml
+│     ├── Guide.pdf
+│     ├── tabPad_horizontal.i3d
+│     ├── tabPad_horizontal.i3d.shapes
+│     ├── tabPad_vertical.i3d
+│     └── tabPad_vertical.i3d.shapes
+│
+├── Sounds/
+│     ├── amazone_pantera.xml
+│     ├── amazone_pantera_idle_loop.ogg
+│     ├── amazone_pantera_load_loop.ogg
+│     ├── amazone_pantera_run_loop.ogg
+│     ├── amazone_pantera_start.ogg
+│     ├── amazone_pantera_stop.ogg
+│     ├── leeb_pt.xml
+│     ├── leeb_pt_idle_loop.ogg
+│     ├── leeb_pt_load_loop.ogg
+│     ├── leeb_pt_run_loop.ogg
+│     ├── leeb_pt_start.ogg
+│     ├── leeb_pt_stop.ogg
+│     └── rubicon9000.xml
+│
+├── Specializations/
+│     ├── AddConfig.lua
+│     ├── horn.ogg
+│     ├── horn_fendtCombine.ogg
+│     ├── InteractiveComponentInterface.lua
+│     ├── InteractiveControl.lua
+│     ├── InteractiveWindows.lua
+│     ├── universalPassenger.xml
+│     └── UniversalPassengerFix.lua
+│
+├── Textures/
+│     ├── 00000dirt.dds
+│     ├── 1ST.dds
+│     ├── 645.dds
+│     ├── 655.dds
+│     ├── 665.dds
+│     ├── AOCist.dds
+│     ├── brand_fendt.dds
+│     ├── BuFSToG2.dds
+│     ├── BuFSToGnr.dds
+│     ├── chrome.dds
+│     ├── icButtonGradient_diffuse.dds
+│     ├── icButtonRing_diffuse.dds
+│     ├── icon.png (PNG 512X512)
+│     ├── KabVID.dds
+│     ├── KOMP.dds
+│     ├── LLKl.dds
+│     ├── LP.dds
+│     ├── MB100.dds
+│     ├── MISCao.dds
+│     ├── r700iSeeSpray_normal.dds
+│     ├── r700iSeeSpray_vmask.dds
+│     ├── Sija.dds
+│     ├── spectemp.dds
+│     ├── sschud.dds
+│     ├── store_rogator.dds (PNG 512X512)
+│     ├── WarntafelFendt.dds
+│     ├── isariaProCompact_normal.dds
+│     ├── isariaProCompact_vmask.dds
+│     └── isariaProCompactDecals_diffuse.dds
+│
+├── Translate/
+│     └── l10n.xml
+│
+│── Vehicles/
+│     └── rogator.xml
+│
+└── modDesc.xml
+
+
+
+**Złota zasada moddingu, programowania i ogólnie pracy z kodem w plikach XML, modDesc.xml, i3d ................................... posługujemy się tylko i wyłącznie j. anglelskim, zaoszczędzi to nam wiele czasu i wyeliminuje ryzyko niepotrzebnych ewentualnych potencjalnych błędów, do mnie zwracaj się w j. polskim**
+
+
+
+├ (Alt+195): T w prawo - używany dla większości elementów
+
+└ (Alt+192): Lewy dolny róg - używany dla ostatniego elementu
+
+│ (Alt+179): Pionowa linia - używana dla kontynuacji linii
+
+─ (Alt+196): Pozioma linia - używana do łączenia
+
+┬ (Alt+194): T - używany do rozgałęzień w górę
+
+┴ (Alt+193): T do góry nogami - używany do rozgałęzień w dół
+
+┼ (Alt+197): Krzyżyk - używany do skrzyżowań linii
+
+┌ (Alt+218): Lewy górny róg
+
+┐ (Alt+191): Prawy górny róg
+
+┘ (Alt+217): Prawy dolny róg

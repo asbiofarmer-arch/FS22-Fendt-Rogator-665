@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="tabPad_horizontal" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="10" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="4" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="3" filename="$data/shared/default_specular.png"/>
+    <File fileId="11" filename="monitorTextures/decals.dds"/>
+    <File fileId="8" filename="monitorTextures/iFARM_Horizontal_screen.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="decal_monitor" materialId="4" alphaBlending="true" customShaderId="4" customShaderVariation="Decal">
+      <Texture fileId="11"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+    </Material>
+    <Material name="mat_monitor" materialId="5" diffuseColor="0.8 0.8 0.8 1" customShaderId="4" customShaderVariation="colorMask">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.025 0.025 0.025 27"/>
+      <CustomParameter name="colorMat1" value="0.01 0.01 0.01 27"/>
+      <CustomParameter name="colorMat2" value="0.509 0.407 0.275 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 0.1 27"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="screen_emit" materialId="7" specularColor="0.494118 1 0" customShaderId="10">
+      <Texture fileId="8"/>
+      <Normalmap fileId="2"/>
+      <CustomParameter name="lightControl" value="1 0 0 0"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="tabPad_horizontal.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <TransformGroup name="monitor" nodeId="25">
+        <Shape shapeId="1" name="monitor" translation="-0.0085 -0.0085 9.31323e-10" nodeId="26" materialIds="5" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="2" name="holder" translation="0.034 9.31323e-10 0.05" nodeId="27" materialIds="5" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="3" name="screen" translation="-0.01 -0.009 9.31323e-10" nodeId="28" materialIds="7" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="4" name="decals" translation="-0.0085 -0.0085 9.31323e-10" nodeId="29" materialIds="4" castsShadows="true" receiveShadows="true"/>
+        <TransformGroup name="hudFillLevel" translation="-0.012 0.043 0.104" rotation="-90 -90 90" clipDistance="35" nodeId="30"/>
+        <TransformGroup name="hudFillMass" translation="-0.012 0.015 0.074" rotation="-90 -90 90" clipDistance="35" nodeId="37"/>
+        <TransformGroup name="hudWeightVolume" translation="-0.012 -0.085 0.05" rotation="-90 -90 90" clipDistance="35" nodeId="44"/>
+      </TransformGroup>
+  </Scene>
+
+</i3D>

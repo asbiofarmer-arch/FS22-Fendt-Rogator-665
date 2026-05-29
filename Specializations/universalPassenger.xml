@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+
+<universalPassengerVehicles>
+    <annotation>Copyright (C) GtX (Andy), 2018</annotation>
+	<vehicle xmlFilename="rogator.xml" modName="FS19_FENDT_ROGATOR_6x5">
+        <passenger>
+            <passengerNode position="0.448 2.025 2.622" rotation="0 0 0" spineRotation="-90 0 87" customTargets="true">
+                <leftFoot position="0.105 -0.435 0.445" rotation="0 0 0"/>
+                <rightFoot position="-0.105 -0.435 0.445" rotation="0 0 0"/>
+                <rightArm position="-0.105 0.17 0.361" rotation="-21.008 88.616 43.895"/>
+                <leftArm position="0.105 0.17 0.361" rotation="-136.118 -92.601 80.735"/>
+            </passengerNode>
+
+            <cameras>
+                <camera cameraPosition="0 0 11" rotateNodePosition="0.448 1.984 2.584" rotateNodeRotation="-24 180 0" rotatable="true" limit="true" useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="4" transMax="40">
+					<raycastNode position="0 3.911 3.292"/>
+                    <raycastNode position="0 3.175 -2.753"/>
+				</camera>
+                <camera cameraPosition="0.448 2.704 2.584" cameraRotation="-21 180 0" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true"/>
+            </cameras>
+        </passenger>
+    </vehicle>
+</universalPassengerVehicles>

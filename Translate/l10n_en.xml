@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+	<text name="configuration_gpsTitle" text="Guidance System"/>
+	<text name="configuration_value_gps" text="With"/>
+	<text name="ui_option_default" text="Without"/>
+	<text name="input_IC_SPACE" text="Switch IC State"/>
+	<text name="input_IC_MOUSE" text="Change IC State"/>
+	<text name="InteractiveControl_Off" text="Disable IC"/>
+	<text name="InteractiveControl_On" text="Enable IC"/>
+	<text name="ic_component_close" text="Close %s"/>
+	<text name="ic_component_open" text="Open %s"/>
+	<text name="configuration_honk" text="Honk"/>
+	<text name="configuration_fendtHorn" text="Fendt Air Horn"/>
+	<text name="configuration_musicHorn" text="Music Horn"/>
+	<text name="deur" text="Door"/>
+	<text name="seat" text="Passenger Seat"/>
+	<text name="computer" text="Computer"/>
+	<text name="ic_computer_mode1" text="%s Mode 1"/>
+	<text name="ic_computer_mode2" text="%s Mode 2"/>
+	<text name="steeringModeBackWheel" text="Back Wheel Steer"/>
+	<text name="input_SHOW_SSC_HUD" text="SSC: HUD on/off"/>
+	<text name="input_SHOW_SSC_MOUSE" text="SSC: Mouse cursor"/>
+	<text name="input_SSC_MOUSECLICK" text="SSC: Mouse click"/>
+	<text name="SSC_AUTOMATIC_MODE" text="AUTOMATIC MODE"/>
+	<text name="SSC_MANUAL_MODE" text="MANUAL MODE"/>
+</l10n>

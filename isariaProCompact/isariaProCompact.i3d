@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="isariaProCompact" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+
+	<Files>
+		<File fileId="3" filename="$data/shaders/vehicleShader.xml"/>
+		<File fileId="6" filename="$data/shared/assets/assetLibraryDecals_diffuse.png"/>
+		<File fileId="7" filename="$data/shared/assets/assetLibraryDecals_normal.png"/>
+		<File fileId="5" filename="$data/shared/default_normal.png"/>
+		<File fileId="8" filename="$data/shared/window_diffuse.png"/>
+		<File fileId="4" filename="../Textures/isariaProCompactDecals_diffuse.dds"/>
+		<File fileId="1" filename="../Textures/isariaProCompact_normal.dds"/>
+		<File fileId="2" filename="../Textures/isariaProCompact_vmask.dds"/>
+	</Files>
+
+	<Materials>
+		<Material name="isariaProCompact_mat" materialId="1" diffuseColor="0.5 0.5 0.5 1" customShaderId="3" customShaderVariation="colorMask">
+			<CustomParameter name="colorMat0" value="0.792 0.792 0.792 34"/>
+			<CustomParameter name="colorMat1" value="0.3000 0.3000 0.3000 18"/>
+			<Normalmap fileId="1"/>
+			<Glossmap fileId="2"/>
+		</Material>
+		<Material name="isariaProCompactDecals_mat" materialId="4" alphaBlending="true" customShaderId="3" customShaderVariation="Decal">
+			<Texture fileId="4"/>
+			<Normalmap fileId="5"/>
+			<Glossmap fileId="2"/>
+		</Material>
+		<Material name="assetLibraryDecals_mat" materialId="2" customShaderId="3" customShaderVariation="Decal_colorMask">
+			<Texture fileId="6"/>
+			<Normalmap fileId="7"/>
+			<Glossmap fileId="2"/>
+		</Material>
+		<Material name="window_mat" materialId="3" alphaBlending="true" customShaderId="3" customShaderVariation="Window">
+			<Texture fileId="8"/>
+			<Normalmap fileId="5"/>
+			<Glossmap fileId="2"/>
+		</Material>
+	</Materials>
+
+
+	<Shapes externalShapesFile="isariaProCompact.i3d.shapes">
+	</Shapes>
+
+	<Scene>
+		<Shape name="proCompactTop" shapeId="1" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="1">
+			<Shape name="screw_decals" translation="-0.379672 0.282895 0.068649" shapeId="2" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="2" clipDistance="30" nodeId="2"/>
+			<Shape name="glass" translation="-0.658672 0.23256 -0.123917" shapeId="3" castsShadows="true" receiveShadows="true" materialIds="3" clipDistance="300" nodeId="3"/>
+		</Shape>
+		<Shape name="proCompactLeft" translation="0.15 0 0" shapeId="4" castsShadows="true" receiveShadows="true" materialIds="1" skinBindNodeIds="4 5 6" clipDistance="300" nodeId="4">
+			<TransformGroup name="proCompactLeftPart2" translation="0.000054 -0.000094 0.047534" collision="false" clipDistance="300" nodeId="5">
+				<TransformGroup name="proCompactLeftPart3" translation="-0 0 0.04409" collision="false" clipDistance="300" nodeId="6">
+					<TransformGroup name="measurementNode" translation="0 0 0.074259" nodeId="7"/>
+					<Shape name="screw_decals" translation="0.034031 -0.032425 0.023867" shapeId="5" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="2" clipDistance="30" nodeId="8"/>
+					<Shape name="decal" translation="-0.001656 -0.083048 0.073831" shapeId="6" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="4" clipDistance="30" nodeId="9"/>
+				</TransformGroup>
+			</TransformGroup>
+		</Shape>
+		<Shape name="proCompactRight" translation="-0.15 0 0" shapeId="7" castsShadows="true" receiveShadows="true" materialIds="1" skinBindNodeIds="10 11 12" clipDistance="300" nodeId="10">
+			<TransformGroup name="proCompactRightPart2" translation="-0.000054 -0.000094 0.047534" collision="false" clipDistance="300" nodeId="11">
+				<TransformGroup name="proCompactRightPart3" translation="0 0 0.04409" collision="false" clipDistance="300" nodeId="12">
+					<TransformGroup name="measurementNode" translation="0 0 0.074259" nodeId="13"/>
+					<Shape name="screw_decals" translation="-0.034031 -0.032425 0.023867" shapeId="8" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="2" clipDistance="30" nodeId="14"/>
+					<Shape name="decal" translation="0.001656 -0.083048 0.073831" shapeId="9" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="4" clipDistance="30" nodeId="15"/>
+				</TransformGroup>
+			</TransformGroup>
+		</Shape>
+	</Scene>
+
+	<UserAttributes>
+	</UserAttributes>
+</i3D>

@@ -1,0 +1,35 @@
+    <!-- Add the following to the <default> section within the <dashboard> section -->
+
+    <dashboard displayType="VISIBILITY" node="hudFillLevel" groups="MOTOR_ACTIVE"/>
+ 	<dashboard displayType="VISIBILITY" node="hudFillMass" groups="MOTOR_ACTIVE"/>
+ 	<dashboard displayType="VISIBILITY" node="hudWeightVolume" groups="MOTOR_ACTIVE"/>
+    <dashboard displayType="VISIBILITY" node="screen" groups="MOTOR_ACTIVE"/>
+    
+    <!-- horizontal tablet example -->
+    
+    <realDashboard fillTypeCategories="bulk">
+ 		<dashboards>
+            <dashboard displayType="TEXT" valueType="fillLevel"   node="hudFillLevel"    textColor="0 0 0 1" hiddenColor="0.4 0.4 0.4 1" textSize="0.03"  textMask="000000"  font="DIGIT" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="TEXT" valueType="fillMass"    node="hudFillMass"     textColor="0 0 0 1" hiddenColor="0.4 0.4 0.4 1" textSize="0.02" textMask="000000"   font="DIGIT" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="TEXT" valueType="fillDensity" node="hudWeightVolume" textColor="0 0 0 1" hiddenColor="0.4 0.4 0.4 1" textSize="0.008" textMask="0000.0"  font="DIGIT" groups="MOTOR_ACTIVE"/>
+ 		</dashboards>
+	</realDashboard>
+
+    <!-- vertical tablet example -->
+
+    <realDashboard fillTypeCategories="bulk">
+ 		<dashboards>
+            <dashboard displayType="TEXT" valueType="fillLevel"   node="hudFillLevel"    textColor="0 0 0 1" hiddenColor="0.4 0.4 0.4 1" textSize="0.03"  textMask="000000"  font="DIGIT" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="TEXT" valueType="fillMass"    node="hudFillMass"     textColor="0 0 0 1" hiddenColor="0.4 0.4 0.4 1" textSize="0.022" textMask="000000"  font="DIGIT" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="TEXT" valueType="fillDensity" node="hudWeightVolume" textColor="0 0 0 1" hiddenColor="0.4 0.4 0.4 1" textSize="0.006" textMask="0000.0"  font="DIGIT" groups="MOTOR_ACTIVE"/>
+ 		</dashboards>
+	</realDashboard>
+
+    <!-- Add these to your i3dMappings section -->
+
+    <i3dMappings>
+        <i3dMapping id="screen" node="IndexPathFromGE" />
+        <i3dMapping id="hudFillLevel" node="IndexPathFromGE" />
+        <i3dMapping id="hudFillMass" node="IndexPathFromGE" />
+        <i3dMapping id="hudWeightVolume" node="IndexPathFromGE" />
+    </i3dMappings>

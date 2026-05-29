@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<sounds>
+	<motorStart template="SPRAYER_MOTOR_START" file="Sounds/amazone_pantera_start.ogg" linkNode="0>"/>
+	<motorStop template="SPRAYER_MOTOR_STOP" file="Sounds/amazone_pantera_stop.ogg" linkNode="0>"/>
+
+	<motor template="SPRAYER_MOTOR_IDLE" file="Sounds/amazone_pantera_idle_loop.ogg" linkNode="0>"/>
+	<motor template="SPRAYER_MOTOR_OFFLOAD_RUN" file="Sounds/amazone_pantera_run_loop.ogg" linkNode="0>"/>
+    
+	<motor file="Sounds/amazone_pantera_load_loop.ogg" innerRadius="21.0" outerRadius="140.0" linkNode="0>">
+		<volume indoor="0.25" outdoor="1.0">
+			<modifier type="MOTOR_LOAD" value="0.0" modifiedValue="0.00"/>
+			<modifier type="MOTOR_LOAD" value="1.0" modifiedValue="1.20"/>
+            
+			<modifier type="MOTOR_RPM" value="0.00" modifiedValue="0.00"/>
+			<modifier type="MOTOR_RPM" value="0.80" modifiedValue="1.00"/>
+		</volume>
+		<pitch indoor="1.0" outdoor="1.0">
+			<modifier type="MOTOR_RPM" value="0.25" modifiedValue="0.75"/>
+			<modifier type="MOTOR_RPM" value="1.00" modifiedValue="1.00"/>
+                
+			<modifier type="COMBINE_LOAD" value="0.00" modifiedValue="1.00"/>
+			<modifier type="COMBINE_LOAD" value="1.00" modifiedValue="0.90"/>
+
+			<modifier type="MOWER_LOAD" value="0.00" modifiedValue="1.00"/>
+			<modifier type="MOWER_LOAD" value="1.00" modifiedValue="0.90"/>
+		</pitch>
+		<lowpassGain indoor="0.5" outdoor="1.0"/>
+	</motor>
+
+	<gearbox template="DEFAULT_GEARBOX" file="$data/sounds/vehicles/transmission/transmission_cvtx_loop.wav" linkNode="0>"/>
+	<retarder template="DEFAULT_RETARDER" file="$data/sounds/vehicles/retarder/retarder_loop_01.wav" linkNode="0>"/>
+
+	<airCompressorStart template="BRAKE_COMPRESSOR_START" linkNode="0>"/>
+	<airCompressorStop template="BRAKE_COMPRESSOR_STOP" linkNode="0>"/>
+	<airCompressorRun template="BRAKE_COMPRESSOR_RUN" linkNode="0>"/>
+	<compressedAir template="BRAKE_SMALL" linkNode="0>"/>
+	<airRelease template="BRAKE_REGULATOR_VALVE" linkNode="0>"/>
+</sounds>

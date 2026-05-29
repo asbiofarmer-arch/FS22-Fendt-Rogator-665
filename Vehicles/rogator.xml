@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="rogator">
+
+	<!-- ==================== METADATA ==================== -->
+	<annotation>Copyright (C) ASF GEM-PRO</annotation>
+	<storeData>
+		<name>FENDT Rogator 665</name>
+		<specs>
+			<workingWidth>36</workingWidth>
+			<power>300 - 422</power>
+			<maxSpeed>50</maxSpeed>
+		</specs>
+		<functions>
+			<function>$l10n_function_sprayer</function>
+		</functions>
+		<image>Textures/store_rogator.dds</image>
+		<price>345000</price>
+		<lifetime>600</lifetime>
+		<rotation>0</rotation>
+		<brand>FENDT</brand>
+		<category>sprayerVehicles</category>
+	</storeData>
+
+	<!-- ==================== BASE VEHICLE ==================== -->
+	<base>
+		<typeDesc>$l10n_typeDesc_sprayer</typeDesc>
+		<filename>Models/rogator.i3d</filename>
+		<sounds filename="Sounds/rubicon9000.xml"/>
+		<size width="3.5" length="9"/>
+		<speedLimit value="20"/>
+		<components>
+			<component centerOfMass="0 0.95 -0.2" solverIterationCount="10" mass="12700"/>
+		</components>
+		<schemaOverlay attacherJointPosition="0.5 0" name="VEHICLE"/>
+		<mapHotspot type="TRACTOR"/>
+	</base>
+	<!-- GPS Configuration Start -->
+	<designConfigurations title="$l10n_configuration_gpsTitle">
+		<designConfiguration name="$l10n_ui_option_default" price="0"/>
+		<designConfiguration name="$l10n_configuration_value_gps" price="15000">
+			<objectChange node="0>5|1|5" visibilityActive="true" visibilityInactive="false"/>
+		</designConfiguration>
+	</designConfigurations>
+	<!-- GPS Configuration End -->
+	<!-- ==================== SPECIALIZATIONS ==================== -->
+	<specializations>
+		<specialization name="sprayerSectionControl"/>
+	</specializations>
+
+	<!-- ==================== MOTOR CONFIGURATIONS ==================== -->
+	<motorized>
+		<motorConfigurations>
+			<motorConfiguration name="Rogator 665 (Normal)" hp="300" price="0">
+				<motor torqueScale="1.74" minRpm="1000" maxRpm="2200" maxForwardSpeed="52" maxBackwardSpeed="25" brakeForce="10" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="1" rotInertia="0.002">
+					<torque normRpm="0.45" torque="0.9"/>
+					<torque normRpm="0.5" torque="0.97"/>
+					<torque normRpm="0.59" torque="1"/>
+					<torque normRpm="0.72" torque="1"/>
+					<torque normRpm="0.86" torque="0.88"/>
+					<torque normRpm="1" torque="0.72"/>
+				</motor>
+				<transmission minForwardGearRatio="10.2" maxForwardGearRatio="250" minBackwardGearRatio="40" maxBackwardGearRatio="250"/>
+			</motorConfiguration>
+			<motorConfiguration name="Rogator 665 (Premium)" hp="354" price="28000">
+				<motor torqueScale="2.05"/>
+			</motorConfiguration>
+			<motorConfiguration name="Rogator 665 (Hyperpremium)" hp="422" price="55000">
+				<motor torqueScale="2.45"/>
+			</motorConfiguration>
+		</motorConfigurations>
+		<consumerConfigurations>
+			<consumerConfiguration>
+				<consumer fillUnitIndex="2" usage="100" fillType="diesel"/>
+				<consumer fillUnitIndex="3" usage="3.0" fillType="def"/>
+			</consumerConfiguration>
+		</consumerConfigurations>
+		<differentialConfigurations>
+			<differentialConfiguration>
+				<differentials>
+					<differential torqueRatio="0.5" maxSpeedRatio="1.3" wheelIndex1="1" wheelIndex2="2"/>
+					<differential torqueRatio="0.5" maxSpeedRatio="1.5" wheelIndex1="3" wheelIndex2="4"/>
+					<differential torqueRatio="0.5" maxSpeedRatio="1.1" differentialIndex1="1" differentialIndex2="2"/>
+				</differentials>
+			</differentialConfiguration>
+		</differentialConfigurations>
+		<exhaustEffects>
+			<exhaustEffect node="0>5|19" filename="$data/effects/exhaust/exhaust.i3d" minRpmColor="0.9 0.9 0.9 0.05" maxRpmColor="0.9 0.9 0.9 0.2" minRpmScale="0.05" maxRpmScale="0.4"/>
+		</exhaustEffects>
+		<exhaustFlap node="0>5|44" maxRot="50"/>
+		<motorStartDuration>2500</motorStartDuration>
+	</motorized>
+    
+	<!-- ==================== FILLUNIT CONFIGURATIONS ==================== -->
+	<fillUnit>
+		<fillUnitConfigurations>
+			<fillUnitConfiguration name="5000 L" price="0">
+				<fillUnits>
+					<unloading width="17" offset="0 0 0"/>
+					<fillUnit unitTextOverride="$l10n_unit_literShort" fillTypeCategories="sprayer" capacity="5000"/>
+					<fillUnit capacity="320" unitTextOverride="$l10n_unit_literShort" fillTypes="diesel" showOnHud="false" showInShop="false" canBeUnloaded="false"/>
+					<fillUnit capacity="80" unitTextOverride="$l10n_unit_literShort" fillTypes="def" showOnHud="false" showInShop="false" canBeUnloaded="false"/>
+				</fillUnits>
+			</fillUnitConfiguration>
+			<fillUnitConfiguration name="6000 L" price="12000">
+				<fillUnits>
+					<unloading width="17" offset="0 0 0"/>
+					<fillUnit unitTextOverride="$l10n_unit_literShort" fillTypeCategories="sprayer" capacity="6000"/>
+					<fillUnit capacity="320" unitTextOverride="$l10n_unit_literShort" fillTypes="diesel" showOnHud="false" showInShop="false" canBeUnloaded="false"/>
+					<fillUnit capacity="80" unitTextOverride="$l10n_unit_literShort" fillTypes="def" showOnHud="false" showInShop="false" canBeUnloaded="false"/>
+				</fillUnits>
+			</fillUnitConfiguration>
+			<fillUnitConfiguration name="8000 L" price="20000">
+				<fillUnits>
+					<unloading width="17" offset="0 0 0"/>
+					<fillUnit unitTextOverride="$l10n_unit_literShort" fillTypeCategories="sprayer" capacity="8000" updateMass="false"/>
+					<fillUnit capacity="320" unitTextOverride="$l10n_unit_literShort" fillTypes="diesel" showOnHud="false" showInShop="false" canBeUnloaded="false"/>
+					<fillUnit capacity="80" unitTextOverride="$l10n_unit_literShort" fillTypes="def" showOnHud="false" showInShop="false" canBeUnloaded="false"/>
+				</fillUnits>
+			</fillUnitConfiguration>
+		</fillUnitConfigurations>
+	</fillUnit>
+
+	<!-- ==================== WIPERS ==================== -->
+	<wipers>
+		<wiper animName="wischers">
+			<state animSpeed="0.75" animPause="2.0"/>
+			<state animSpeed="0.75" animPause="0.0"/>
+			<state animSpeed="1.10" animPause="0.0"/>
+			<state animSpeed="0.75" animPause="0.0"/>
+		</wiper>
+	</wipers>
+
+	<!-- ==================== STEERING MODES ==================== -->
+	<crabSteering>
+		<steeringMode name="action_steeringModeAllWheel">
+			<wheel index="1" offset="0"/>
+			<wheel index="2" offset="0"/>
+			<wheel index="3" offset="0"/>
+			<wheel index="4" offset="0"/>
+		</steeringMode>
+		<steeringMode name="steeringModeBackWheel">
+			<wheel index="1" offset="0" locked="false"/>
+			<wheel index="2" offset="0" locked="true"/>
+			<wheel index="3" offset="0" locked="true"/>
+			<wheel index="4" offset="0" locked="false"/>
+		</steeringMode>
+		<steeringMode name="action_steeringModeFrontWheel">
+			<wheel index="1" offset="0" locked="true"/>
+			<wheel index="2" offset="0" locked="false"/>
+			<wheel index="3" offset="0" locked="false"/>
+			<wheel index="4" offset="0" locked="true"/>
+		</steeringMode>
+	</crabSteering>
+
+	<!-- ==================== WHEELS ==================== -->
+	<wheels>
+		<wheelConfigurations>
+			<wheelConfiguration name="TM100 380/90R54" price="2500" brand="TRELLEBORG">
+				<wheels autoRotateBackSpeed="2">
+					<wheel filename="$data/shared/wheels/tires/trelleborg/TM100/380_90R54.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<physics rotSpeed="1" restLoad="3.0" repr="0>6|0|1" driveNode="0>6|0|1|0" forcePointRatio="0.2" width="0.52" mass="0.43" initialCompression="50" suspTravel="0.2" spring="45" damper="50"/>
+						<tire isCareWheel="true"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/tires/trelleborg/TM100/380_90R54.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<physics rotSpeed="1" restLoad="3.0" repr="0>6|1|0" driveNode="0>6|1|0|0" forcePointRatio="0.2" width="0.52" mass="0.43" initialCompression="50" suspTravel="0.2" spring="45" damper="50"/>
+						<tire isCareWheel="true"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/tires/trelleborg/TM100/380_90R54.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<physics rotSpeed="1" restLoad="3.0" repr="0>6|0|0" driveNode="0>6|0|0|0" forcePointRatio="0.2" width="0.52" mass="0.43" initialCompression="50" suspTravel="0.2" spring="45" damper="50"/>
+						<tire isCareWheel="true"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/tires/trelleborg/TM100/380_90R54.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<physics rotSpeed="1" restLoad="3.0" repr="0>6|1|1" driveNode="0>6|1|1|0" forcePointRatio="0.2" width="0.52" mass="0.43" initialCompression="50" suspTravel="0.2" spring="45" damper="50"/>
+						<tire isCareWheel="true"/>
+					</wheel>
+				</wheels>
+			</wheelConfiguration>
+			<wheelConfiguration name="TM600 480/80R50" price="2500" brand="TRELLEBORG">
+				<wheels autoRotateBackSpeed="2">
+					<wheel filename="$data/shared/wheels/tires/trelleborg/TM600/480_80R50.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<physics rotSpeed="1" restLoad="3.0" repr="0>6|0|1" driveNode="0>6|0|1|0" forcePointRatio="0.2" width="0.52" mass="0.43" initialCompression="50" suspTravel="0.2" spring="45" damper="50"/>
+						<tire isCareWheel="true"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/tires/trelleborg/TM600/480_80R50.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<physics rotSpeed="1" restLoad="3.0" repr="0>6|1|0" driveNode="0>6|1|0|0" forcePointRatio="0.2" width="0.52" mass="0.43" initialCompression="50" suspTravel="0.2" spring="45" damper="50"/>
+						<tire isCareWheel="true"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/tires/trelleborg/TM600/480_80R50.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<physics rotSpeed="1" restLoad="3.0" repr="0>6|0|0" driveNode="0>6|0|0|0" forcePointRatio="0.2" width="0.52" mass="0.43" initialCompression="50" suspTravel="0.2" spring="45" damper="50"/>
+						<tire isCareWheel="true"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/tires/trelleborg/TM600/480_80R50.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<physics rotSpeed="1" restLoad="3.0" repr="0>6|1|1" driveNode="0>6|1|1|0" forcePointRatio="0.2" width="0.52" mass="0.43" initialCompression="50" suspTravel="0.2" spring="45" damper="50"/>
+						<tire isCareWheel="true"/>
+					</wheel>
+				</wheels>
+			</wheelConfiguration>
+			<!-- Tutaj możesz wkleić pozostałe konfiguracje kół z oryginalnego pliku -->
+		</wheelConfigurations>
+		<ackermannSteeringConfigurations>
+			<ackermannSteering rotSpeed="60" rotMax="27" rotCenterWheel1="3" rotCenterWheel2="4"/>
+		</ackermannSteeringConfigurations>
+		<hubs>
+			<color0>FENDT_GREY2</color0>
+			<hub linkNode="0>6|0|0|0" filename="$data/shared/wheels/hubs/hub_n10_2.xml" isLeft="true" scale="0.33 0.33 0.33"/>
+			<hub linkNode="0>6|1|0|0" filename="$data/shared/wheels/hubs/hub_n12_2.xml" isLeft="false" scale="0.33 0.33 0.33"/>
+			<hub linkNode="0>6|0|1|0" filename="$data/shared/wheels/hubs/hub_n12_2.xml" isLeft="true" scale="0.33 0.33 0.33"/>
+			<hub linkNode="0>6|1|1|0" filename="$data/shared/wheels/hubs/hub_n12_2.xml" isLeft="false" scale="0.33 0.33 0.33"/>
+		</hubs>
+	</wheels>
+
+	<!-- ==================== OTHER CONFIGURATIONS ==================== -->
+	<rimColorConfigurations useDefaultColors="true" price="300" defaultColorIndex="13"/>
+	<powerConsumer ptoRpm="450" neededMaxPtoPower="10"/>
+
+	<!-- ==================== LIGHTS ==================== -->
+	<lights>
+		<states>
+			<state lightTypes="0"/>
+			<state lightTypes="0 2"/>
+		</states>
+		<realLights>
+			<low>
+				<light node="0>5|18|0|1" lightTypes="0 3"/>
+				<light node="0>5|16|14|0" lightTypes="0 1"/>
+			</low>
+			<high>
+				<light node="0>5|18|0|0" lightTypes="0 3"/>
+				<light node="0>5|18|0|1" lightTypes="0 3"/>
+				<light node="0>5|18|6|0" lightTypes="0" excludedLightTypes="2 3"/>
+				<light node="0>5|18|1|0" lightTypes="2"/>
+				<light node="0>5|18|1|1" lightTypes="2"/>
+				<light node="0>5|18|1|2" lightTypes="2"/>
+				<light node="0>5|18|1|3" lightTypes="2"/>
+				<light node="0>5|16|14|0" lightTypes="2"/>
+				<light node="0>5|16|1|0|0|45|2" lightTypes="2"/>
+				<light node="0>5|16|1|0|1|25|2" lightTypes="2"/>
+				<turnLightLeft node="0>5|18|2|0|0"/>
+				<turnLightLeft node="0>5|18|2|0|1"/>
+				<turnLightRight node="0>5|18|2|1|0"/>
+				<turnLightRight node="0>5|18|2|1|1"/>
+				<brakeLight node="0>5|16|14|0"/>
+				<reverseLight node="0>5|18|4|0"/>
+				<reverseLight node="0>5|18|4|0|0"/>
+			</high>
+		</realLights>
+		<defaultLights>
+			<defaultLight shaderNode="0>5|16|1|0|1|25|3|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|16|1|0|1|25|4|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|16|1|0|0|45|3|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|16|1|0|0|45|4|0" lightTypes="2"/>
+
+			<defaultLight shaderNode="0>5|18|7|1|1|8" lightTypes="0"/>
+			<defaultLight shaderNode="0>5|18|7|1|0|8" lightTypes="0"/>
+
+			<defaultLight shaderNode="0>5|18|7|2|0|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|18|7|2|1|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|18|7|2|2|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|18|7|2|3|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|18|7|2|4|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|18|7|2|5|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|18|7|2|6|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|18|7|2|7|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|18|7|2|8|0" lightTypes="2"/>
+			<defaultLight shaderNode="0>5|18|7|2|9|0" lightTypes="2"/>
+
+			<defaultLight shaderNode="0>5|18|7|3|0|0" lightTypes="0"/>
+			<defaultLight shaderNode="0>5|18|7|3|1|0" lightTypes="0"/>
+			<defaultLight shaderNode="0>5|18|7|3|2|0" lightTypes="0"/>
+			<defaultLight shaderNode="0>5|18|7|3|3|0" lightTypes="0"/>
+
+		</defaultLights>
+		<turnLights>
+			<turnLightLeft shaderNode="0>5|18|7|4|2"/>
+			<turnLightLeft shaderNode="0>5|18|7|1|0|6"/>
+			<turnLightLeft shaderNode="0>5|18|7|4|5|1"/>
+			<turnLightLeft shaderNode="0>5|18|7|4|6|0"/>
+			<turnLightLeft shaderNode="0>5|18|7|4|7|0"/>
+
+			<turnLightRight shaderNode="0>5|18|7|1|1|6"/>
+			<turnLightRight shaderNode="0>5|18|7|4|0|0"/>
+			<turnLightRight shaderNode="0>5|18|7|4|1|0"/>
+			<turnLightRight shaderNode="0>5|18|7|4|3|1"/>
+			<turnLightRight shaderNode="0>5|18|7|4|4|1"/>
+		</turnLights>
+		<brakeLights>
+			<brakeLight shaderNode="0>5|16|25|1"/>
+			<brakeLight shaderNode="0>5|16|26|0"/>
+			<brakeLight shaderNode="0>5|16|27|1"/>
+			<brakeLight shaderNode="0>5|18|7|1|1|9"/>
+			<brakeLight shaderNode="0>5|18|7|1|0|9"/>
+		</brakeLights>
+		<reverseLights>
+			<reverseLight shaderNode="0>5|18|7|1|0|7"/>
+			<reverseLight shaderNode="0>5|18|7|1|1|7"/>
+		</reverseLights>
+		<beaconLights>
+			<beaconLight node="0>5|18|5|0"
+			             filename="$data/shared/assets/beaconLights/lizard/beaconLight02.xml"/>
+			<beaconLight node="0>5|18|5|1"
+			             filename="$data/shared/assets/beaconLights/lizard/beaconLight02.xml"/>
+			<beaconLight node="0>5|16|24"
+			             filename="$data/shared/assets/beaconLights/lizard/beaconLight02.xml"/>
+		</beaconLights>
+		<sounds>
+			<switchLight template="SWITCH_01"/>
+			<turnLight template="SWITCH_TURNLIGHT"/>
+		</sounds>
+	</lights>
+
+	<!-- ==================== WORK AREAS & SPRAYER ==================== -->
+	<workAreas>
+		<workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false"
+		          requiresGroundContact="false">
+			<area startNode="0>5|21|0|0" widthNode="0>5|21|1|0" heightNode="0>5|21|2|0"/>
+		</workArea>
+		<workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false"
+		          requiresGroundContact="false">
+			<area startNode="0>5|21|0|1" widthNode="0>5|21|1|1" heightNode="0>5|21|2|1"/>
+		</workArea>
+		<workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false"
+		          requiresGroundContact="false">
+			<area startNode="0>5|21|0|2" widthNode="0>5|21|1|2" heightNode="0>5|21|2|2"/>
+		</workArea>
+		<workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false"
+		          requiresGroundContact="false">
+			<area startNode="0>5|21|0|3" widthNode="0>5|21|1|3" heightNode="0>5|21|2|3"/>
+		</workArea>
+		<workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false"
+		          requiresGroundContact="false">
+			<area startNode="0>5|21|0|4" widthNode="0>5|21|1|4" heightNode="0>5|21|2|4"/>
+		</workArea>
+		<workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false"
+		          requiresGroundContact="false">
+			<area startNode="0>5|21|0|5" widthNode="0>5|21|1|5" heightNode="0>5|21|2|5"/>
+		</workArea>
+		<workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false"
+		          requiresGroundContact="false">
+			<area startNode="0>5|21|0|6" widthNode="0>5|21|1|6" heightNode="0>5|21|2|6"/>
+		</workArea>
+		<workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false"
+		          requiresGroundContact="false">
+			<area startNode="0>5|21|0|7" widthNode="0>5|21|1|7" heightNode="0>5|21|2|7"/>
+		</workArea>
+		<workArea type="sprayer" functionName="processSprayerArea" disableBackwards="false"
+		          requiresGroundContact="false">
+			<area startNode="0>5|21|0|8" widthNode="0>5|21|1|8" heightNode="0>5|21|2|8"/>
+		</workArea>
+	</workAreas>
+	<sprayerSectionControl>
+		<sections>
+			<section workingWidth="4" workAreaId="1" effectNodeId="33 34 35 36 37 38 39 40 41 42"
+			         testAreaStartNode="0>5|21|3|0" testAreaWidthNode="0>5|21|4|0"
+			         testAreaHeightNode="0>5|21|2|0"/>
+			<section workingWidth="4" workAreaId="2" effectNodeId="24 25 26 27 28 29 30 31 32"
+			         testAreaStartNode="0>5|21|3|1" testAreaWidthNode="0>5|21|4|1"
+			         testAreaHeightNode="0>5|21|2|1"/>
+			<section workingWidth="4" workAreaId="3" effectNodeId="15 16 17 18 19 20 21 22 23"
+			         testAreaStartNode="0>5|21|3|2" testAreaWidthNode="0>5|21|4|2"
+			         testAreaHeightNode="0>5|21|2|2"/>
+			<section workingWidth="4.25" workAreaId="4" effectNodeId="4 5 6 7 8 9 10 11 12 13 14"
+			         testAreaStartNode="0>5|21|3|3" testAreaWidthNode="0>5|21|4|3"
+			         testAreaHeightNode="0>5|21|2|3"/>
+			<section workingWidth="3.5" workAreaId="5" effectNodeId="1 2 3"
+			         testAreaStartNode="0>5|21|3|4" testAreaWidthNode="0>5|21|4|4"
+			         testAreaHeightNode="0>5|21|2|4"/>
+			<section workingWidth="4.25" workAreaId="6" effectNodeId="43 44 45 46 47 48 49 50 51 52 53"
+			         testAreaStartNode="0>5|21|3|5" testAreaWidthNode="0>5|21|4|5"
+			         testAreaHeightNode="0>5|21|2|5"/>
+			<section workingWidth="4" workAreaId="7" effectNodeId="54 55 56 57 58 59 60 61 62"
+			         testAreaStartNode="0>5|21|3|6" testAreaWidthNode="0>5|21|4|6"
+			         testAreaHeightNode="0>5|21|2|6"/>
+			<section workingWidth="4" workAreaId="8" effectNodeId="63 64 65 66 67 68 69 70 71"
+			         testAreaStartNode="0>5|21|3|7" testAreaWidthNode="0>5|21|4|7"
+			         testAreaHeightNode="0>5|21|2|7"/>
+			<section workingWidth="4" workAreaId="9" effectNodeId="72 73 74 75 76 77 78 79 80 81"
+			         testAreaStartNode="0>5|21|3|8" testAreaWidthNode="0>5|21|4|8"
+			         testAreaHeightNode="0>5|21|2|8"/>
+		</sections>
+	</sprayerSectionControl>
+	<!-- ==================== MANURE SYSTEM ==================== -->
+	<sprayer fillUnitIndex="1" unloadInfoIndex="1" loadInfoIndex="1">
+		<usageScales workingWidth="36.0" scale="1"/>
+		<effects>
+			<effectNode effectNode="0>5|16|7|0" effectClass="ParticleEffect" particleType="WASHER_WATER"
+			            emitCountScale="1" worldSpace="true" delay="0.025"/>
+			<effectNode effectNode="0>5|16|8" delay="0|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true"/>
+			<effectNode effectNode="0>5|16|9|0" effectClass="ParticleEffect" particleType="WASHER_WATER"
+			            emitCountScale="1" worldSpace="true" delay="0.025"/>
+			<effectNode effectNode="0>5|16|1|0|0|17|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.05"/>
+			<effectNode effectNode="0>5|16|1|0|0|18|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.075"/>
+			<effectNode effectNode="0>5|16|1|0|0|19|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.1"/>
+			<effectNode effectNode="0>5|16|1|0|0|20|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.125"/>
+			<effectNode effectNode="0>5|16|1|0|0|21|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.15"/>
+			<effectNode effectNode="0>5|16|1|0|0|22|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.175"/>
+			<effectNode effectNode="0>5|16|1|0|0|23|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.2"/>
+			<effectNode effectNode="0>5|16|1|0|0|24|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.225"/>
+			<effectNode effectNode="0>5|16|1|0|0|25|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.25"/>
+			<effectNode effectNode="0>5|16|1|0|0|26|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.275"/>
+			<effectNode effectNode="0>5|16|1|0|0|27|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.3"/>
+			<effectNode effectNode="0>5|16|1|0|0|28|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.325"/>
+			<effectNode effectNode="0>5|16|1|0|0|29|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.35"/>
+			<effectNode effectNode="0>5|16|1|0|0|30|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.375"/>
+			<effectNode effectNode="0>5|16|1|0|0|31|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.4"/>
+			<effectNode effectNode="0>5|16|1|0|0|32|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.425"/>
+			<effectNode effectNode="0>5|16|1|0|0|33|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.45"/>
+			<effectNode effectNode="0>5|16|1|0|0|34|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.475"/>
+			<effectNode effectNode="0>5|16|1|0|0|35|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.5"/>
+			<effectNode effectNode="0>5|16|1|0|0|36|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.525"/>
+			<effectNode effectNode="0>5|16|1|0|0|37|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.55"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|17|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.575"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|18|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.6"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|19|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.625"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|20|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.65"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|21|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.675"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|22|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.7"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|23|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.725"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|24|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.75"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|25|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.775"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|26|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.8"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|27|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.825"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|28|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.85"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|29|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.875"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|30|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.9"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|31|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.925"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|32|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.95"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|33|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.975"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|34|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="1"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|0|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.05"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|1|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.075"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|2|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.1"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|3|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.125"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|4|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.15"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|5|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.175"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|6|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.2"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|7|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.225"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|8|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.25"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|9|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.275"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|10|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.3"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|11|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.325"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|12|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.35"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|13|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.375"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|14|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|15|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.425"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|16|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.45"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|17|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.475"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|18|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.5"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|19|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.525"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|20|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.55"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|0|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.575"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|1|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.6"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|2|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.625"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|3|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.65"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|4|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.675"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|5|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.7"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|6|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.725"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|7|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.75"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|8|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.775"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|9|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.8"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|10|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.825"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|11|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.85"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|12|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.875"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|13|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.9"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|14|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.925"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|15|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.95"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|16|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="0.975"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|17|0" effectClass="ParticleEffect"
+			            particleType="WASHER_WATER" emitCountScale="1" worldSpace="true" delay="1"/>
+		</effects>
+	</sprayer>
+
+	<!-- ==================== PRECISION FARMING ==================== -->
+	<weedSpotSpray>
+		<weedSpotSprayConfigurations>
+			<weedSpotSprayConfiguration name="$l10n_configuration_valueNo" price="0"/>
+			<weedSpotSprayConfiguration name="$l10n_configuration_valueYes" price="39000">
+				<objectChange node="0>5|16|1|0|0|0|0|40" visibilityActive="true"
+				              visibilityInactive="false"/>
+				<objectChange node="0>5|16|1|0|0|0|0|41" visibilityActive="true"
+				              visibilityInactive="false"/>
+
+				<objectChange node="0>5|16|1|0|0|48" visibilityActive="true" visibilityInactive="false"/>
+				<objectChange node="0>5|16|1|0|0|49" visibilityActive="true" visibilityInactive="false"/>
+
+				<objectChange node="0>5|16|1|0|1|28" visibilityActive="true" visibilityInactive="false"/>
+				<objectChange node="0>5|16|1|0|1|29" visibilityActive="true" visibilityInactive="false"/>
+
+				<objectChange node="0>5|16|1|0|1|0|0|21" visibilityActive="true"
+				              visibilityInactive="false"/>
+				<objectChange node="0>5|16|1|0|1|0|0|22" visibilityActive="true"
+				              visibilityInactive="false"/>
+			</weedSpotSprayConfiguration>
+		</weedSpotSprayConfigurations>
+
+		<nozzles foldingConfigurationIndex="1">
+			<effectNode effectNode="0>5|16|1|0|0|0|0|42" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|43" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|44" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|45" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|46" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|47" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|48" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|49" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|50" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|51" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|52" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|53" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|54" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|55" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|56" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|57" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|58" sectionIndex="1"/>
+			<effectNode effectNode="0>5|16|1|0|0|0|0|59" sectionIndex="1"/>
+
+			<effectNode effectNode="0>5|16|1|0|0|50" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|51" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|52" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|53" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|54" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|55" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|56" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|57" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|58" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|59" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|60" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|61" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|62" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|63" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|64" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|65" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|66" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|67" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|68" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|69" sectionIndex="2"/>
+			<effectNode effectNode="0>5|16|1|0|0|70" sectionIndex="2"/>
+
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|18" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|19" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|20" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|21" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|22" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|23" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|24" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|25" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|26" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|27" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|28" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|29" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|30" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|31" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|32" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|33" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|34" sectionIndex="3"/>
+			<effectNode effectNode="0>5|16|1|0|1|0|0|16|35" sectionIndex="3"/>
+
+			<effectNode effectNode="0>5|16|1|0|1|17|21" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|22" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|23" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|24" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|25" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|26" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|27" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|28" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|29" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|30" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|31" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|32" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|33" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|34" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|35" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|36" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|37" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|38" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|39" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|40" sectionIndex="4"/>
+			<effectNode effectNode="0>5|16|1|0|1|17|41" sectionIndex="4"/>
+
+			<effectNode effectNode="0>5|16|28" sectionIndex="5"/>
+			<effectNode effectNode="0>5|16|29" sectionIndex="5"/>
+			<effectNode effectNode="0>5|16|30" sectionIndex="5"/>
+		</nozzles>
+	</weedSpotSpray>
+	<cropSensor>
+		<cropSensorConfigurations>
+			<cropSensorConfiguration name="$l10n_configuration_valueNo" price="0"/>
+			<cropSensorConfiguration name="$l10n_configuration_valueYes" price="14950">
+				<sensorLinkNode node="0>5|1|6|0" type="SENSOR_TOP"/>
+				<sensorLinkNode node="0>5|1|6|1" type="SENSOR_LEFT">
+					<rotationNode rotation="0 -45 0"/>
+					<rotationNode autoRotate="true"/>
+				</sensorLinkNode>
+				<sensorLinkNode node="0>5|1|6|2" type="SENSOR_RIGHT">
+					<rotationNode rotation="0 -45 0"/>
+					<rotationNode autoRotate="true"/>
+				</sensorLinkNode>
+			</cropSensorConfiguration>
+		</cropSensorConfigurations>
+	</cropSensor>
+	
+	<!-- ==================== ENTERABLE & ANIMATIONS ==================== -->
+	<enterable>
+		<exitPoint node="0>3"/>
+		<enterReferenceNode node="0>"/>
+		<characterNode node="0>5|15|0" cameraMinDistance="1.5" spineRotation="-90 0 90">
+			<target ikChain="rightFoot" targetNode="0>5|15|1"/>
+			<target ikChain="leftFoot" targetNode="0>5|15|2"/>
+			<target ikChain="rightArm" targetNode="0>5|1|3|4|1" poseId="wideFingers"/>
+			<target ikChain="leftArm" targetNode="0>5|1|1|2|1"/>
+		</characterNode>
+
+		<characterTargetNodeModifier node="0>5|15|1" transitionTime="0.5">
+			<state node="0>5|15|3" referenceNode="0>5|1|2" directionReferenceNode="0>5|1|2|1"/>
+		</characterTargetNodeModifier>
+
+		<cameras>
+			<camera node="0>0|0" rotatable="true" rotateNode="0>0" limit="true"
+			        useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="5.5" transMax="35">
+				<raycastNode node="0>1"/>
+				<raycastNode node="0>2"/>
+			</camera>
+			<camera node="0>5|1|3|6" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4"
+			        transMin="0" transMax="0" useMirror="true" isInside="true"/>
+		</cameras>
+		<mirrors>
+			<mirror node="0>5|20|0|0" prio="1"/>
+			<mirror node="0>5|20|1|0" prio="1"/>
+		</mirrors>
+	</enterable>
+	<foldable>
+		<foldingConfigurations title="Spreader System">
+			<foldingConfiguration name="Boom" price="0">
+				<foldingParts startMoveDirection="0" turnOnFoldMinLimit="0.99" turnOnFoldMaxLimit="1">
+					<foldingPart animationName="folding" speedScale="0.5">
+						<motor maxForwardSpeed="20"/>
+					</foldingPart>
+				</foldingParts>
+			</foldingConfiguration>
+		</foldingConfigurations>
+	</foldable>
+	<animations>
+		<animation name="seat">
+			<part node="0>5|1|0" startTime="0" endTime="2" startRot="100 0 0" endRot="0 0 0"/>
+			<part node="0>5|1|0|1" startTime="0" endTime="2" startRot="-90 0 -180" endRot="-180 0 180"
+			      startTrans="-0.147 0.327 -0.123" endTrans="-0.147 0.358 -0.081"/>
+		</animation>
+		<animation name="computer">
+			<part node="0>5|1|3|5|0|1" startTime="0" endTime="0.1" visibility="true"/>
+			<part node="0>5|1|3|5|0|1" startTime="0.1" endTime="0.2" visibility="false"/>
+		</animation>
+		<animation name="folding">
+			<part node="0>5|16|1|0|1" startTime="0" endTime="3.0" startRot="0 -0.5 0" endRot="0 -90 0"/>
+			<part node="0>5|16|1|0|1" startTime="0" endTime="3.0" startTrans="-1.09 0.597 -1.79"
+			      endTrans="-1.013 0.615 -1.861"/>
+			<part node="0>5|16|1|0|1|0|0" startTime="0" endTime="4.0" startRot="0 0.5 0"
+			      endRot="-20 180 0"/>
+			<part node="0>5|16|1|0|1" startTime="3" endTime="5.0" startRot="0 -90 0" endRot="10 -90 0"/>
+			<part node="0>5|16" startTime="3" endTime="5.0" startTrans="0.047 0.24 -3.281"
+			      endTrans="0.047 0.137 -3.281"/>
+			<part node="0>5|16|1|0|0" startTime="0" endTime="3.0" startRot="0 0.5 0" endRot="0 90 0"/>
+			<part node="0>5|16|1|0|0" startTime="0" endTime="3.0" startTrans="0.46 0.596 -1.79"
+			      endTrans="0.434 0.601 -1.861"/>
+			<part node="0>5|16|1|0|0|0|0" startTime="0" endTime="4.0" startRot="0 -1 0"
+			      endRot="-20 -180 0"/>
+			<part node="0>5|16|1|0|0" startTime="3" endTime="5.0" startRot="0 90 0" endRot="10 90 0"/>
+			<part node="0>5|16|2" startTime="0" endTime="4.0" startRot="0 -0 0" endRot="0 90 0"/>
+			<part node="0>5|16|3" startTime="0" endTime="4.0" startRot="0 -0 0" endRot="0 -90 0"/>
+
+			<!-- axials -->
+			<part node="0>5|31" startTime="0" endTime="5.0" startTrans="-1.5 -6.492 -4.095"
+			      endTrans="-1.5 -6.95 -4.095"/>
+			<part node="0>5" startTime="0" endTime="5.0" startTrans="0 2.15 0" endTrans="0 2.608 0"/>
+		</animation>
+		<animation name="deur">
+			<part node="0>5|37|0" startTime="0" duration="2" startRot="0 0 0" endRot="0 -70 0"/>
+			<part node="0>5|37|0" startTime="0" duration="2" startTrans="0 0 0" endTrans="0 0 0.066"/>
+		</animation>
+		<animation name="speedDisplay">
+			<part node="0>5|1|2" startTime="0.1" endTime="0.2" startRot="0 0 0" endRot="37 0 0"/>
+		</animation>
+		<animation name="fillLevel">
+			<part node="0>5|1|3|5|0|1|3" startTime="0" endTime="1" startScale="1 0 1" endScale="1 1 1"/>
+		</animation>
+		<animation name="fuelDisplay">
+			<part node="0>5|1|3|5|0|4" startTime="0" endTime="1" startRot="23.528 -26.295 -0.795"
+			      endRot="9.185 -26.175 -0.791"/>
+		</animation>
+		<animation name="wischers">
+			<part node="0>5|42|0" startTime="0" endTime="2" startRot="0 0 0" endRot="0 0 -90"/>
+			<part node="0>5|42|0" startTime="2" endTime="4" startRot="0 0 -90" endRot="0 0 0"/>
+			<part node="0>5|42|1" startTime="0" endTime="2" startRot="0 0 0" endRot="0 0 -90"/>
+			<part node="0>5|42|1" startTime="2" endTime="4" startRot="0 0 -90" endRot="0 0 0"/>
+			<part node="0>5|42|1|1" startTime="0" endTime="2" startRot="36 0 0" endRot="36 0 90"/>
+			<part node="0>5|42|1|1" startTime="2" endTime="4" startRot="36 0 90" endRot="36 0 0"/>
+		</animation>
+	</animations>
+	<cylindered>
+		<movingTools>
+			<movingTool node="0>6|0" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_WHEEL_BASE" invertAxis="true" mouseSpeedFactor="0.7"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<translation transSpeed="0.1" transAcceleration="10" transMax="-0.1" transMin="-0.2"
+				             translationAxis="1"/>
+			</movingTool>
+			<movingTool node="0>6|1" wheelIndices="3 4" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_WHEEL_BASE" invertAxis="true" mouseSpeedFactor="0.7"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<translation transSpeed="-0.1" transAcceleration="10" transMax="0.2" transMin="0.1"
+				             translationAxis="1"/>
+			</movingTool>
+			<movingTool node="0>5|31|0|2" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_WHEEL_BASE" invertAxis="true" mouseSpeedFactor="0.7"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<translation transSpeed="-0.1" transAcceleration="10" transMax="-0.778" transMin="-0.85"
+				             translationAxis="1"/>
+			</movingTool>
+			<movingTool node="0>5|16" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_SPRAYER_ARM" invertAxis="true" mouseSpeedFactor="1.2"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<translation transSpeed="-0.1" transAcceleration="10" transMax="0.24" transMin="-1.25"
+				             translationAxis="2"/>
+			</movingTool>
+			<movingTool node="0>5" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_FRONTLOADER_ARM2" invertAxis="false"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<translation transSpeed="-0.1" transAcceleration="10" transMax="2.467" transMin="2.15"
+				             translationAxis="2"/>
+			</movingTool>
+			<movingTool node="0>6|1|5|1|1" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_FRONTLOADER_ARM2" invertAxis="true"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<translation transSpeed="-0.09" transAcceleration="10" transMax="0" transMin="-0.22"
+				             translationAxis="3"/>
+			</movingTool>
+			<movingTool node="0>6|1|4|1|1" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_FRONTLOADER_ARM2" invertAxis="true"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<translation transSpeed="-0.09" transAcceleration="10" transMax="0" transMin="-0.22"
+				             translationAxis="3"/>
+			</movingTool>
+			<movingTool node="0>6|0|4|1|1" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_FRONTLOADER_ARM2" invertAxis="true"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<translation transSpeed="-0.09" transAcceleration="10" transMax="0" transMin="-0.22"
+				             translationAxis="3"/>
+			</movingTool>
+			<movingTool node="0>6|0|5|1|1" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_FRONTLOADER_ARM2" invertAxis="true"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<translation transSpeed="-0.09" transAcceleration="10" transMax="0" transMin="-0.22"
+				             translationAxis="3"/>
+			</movingTool>
+			<movingTool node="0>5|16|1|0|1" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_CRANE_TOOL2" invertAxis="true" mouseSpeedFactor="0.2"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<rotation rotSpeed="-80" rotAcceleration="300" rotMax="10" rotMin="0" rotationAxis="1"/>
+				<dependentPart node="0>5|16|1|0|1|18"/>
+				<dependentPart node="0>5|16|3|1"/>
+				<dependentPart node="0>5|16|1|0|1|21"/>
+			</movingTool>
+			<movingTool node="0>5|16|1|0|0" foldMinLimit="0.99" foldMaxLimit="1">
+				<controls axis="AXIS_CRANE_TOOL" invertAxis="true" mouseSpeedFactor="0.2"
+				          iconName="SPRAYER_ARM_TRANSLATE_Y"/>
+				<rotation rotSpeed="-80" rotAcceleration="300" rotMax="10" rotMin="0" rotationAxis="1"/>
+				<dependentPart node="0>5|16|1|0|0|38"/>
+				<dependentPart node="0>5|16|2|1"/>
+			</movingTool>
+			<movingTool node="0>5|16|2">
+				<dependentPart node="0>5|16|2|1"/>
+				<dependentPart node="0>5|16|1|0|2"/>
+			</movingTool>
+			<movingTool node="0>5|16|3">
+				<dependentPart node="0>5|16|3|1"/>
+				<dependentPart node="0>5|16|1|0|3"/>
+			</movingTool>
+		</movingTools>
+		<movingParts>
+			<movingPart node="0>6|1|5|0|1" referencePoint="0>5|31|0|2|0" referenceFrame="0>5|31|0|2|0"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|1|5|0|2" referencePoint="0>5|31|0|2|1" referenceFrame="0>5|31|0|2|1"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|1|4|0|1" referencePoint="0>5|31|1|2|0" referenceFrame="0>5|31|1|2|0"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|1|4|0|2" referencePoint="0>5|31|1|2|1" referenceFrame="0>5|31|1|2|1"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|1|5|1|0" referencePoint="0>5|33" referenceFrame="0>5|33"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|1|4|1|0" referencePoint="0>5|34" referenceFrame="0>5|34"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|0|4|0|1" referencePoint="0>5|31|0|6|0" referenceFrame="0>5|31|0|6|0"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|0|4|0|2" referencePoint="0>5|31|0|6|1" referenceFrame="0>5|31|0|6|1"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|0|4|1|0" referencePoint="0>5|35" referenceFrame="0>5|35"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|0|5|0|1" referencePoint="0>5|31|1|6|0" referenceFrame="0>5|31|1|6|0"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|0|5|0|2" referencePoint="0>5|31|1|6|1" referenceFrame="0>5|31|1|6|1"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>6|0|5|1|0" referencePoint="0>5|36" referenceFrame="0>5|36"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>5|16|1|0|2" referencePoint="0>5|16|2|2" referenceFrame="0>5|16|2|2">
+				<translatingPart node="0>5|16|1|0|2|0"/>
+			</movingPart>
+			<movingPart node="0>5|16|1|0|3" referencePoint="0>5|16|3|2" referenceFrame="0>5|16|3|2">
+				<translatingPart node="0>5|16|1|0|3|0"/>
+			</movingPart>
+			<movingPart node="0>5|16|2|1" referencePoint="0>5|16|1|0|0|39"
+			            referenceFrame="0>5|16|1|0|0|39">
+				<translatingPart node="0>5|16|2|1|0"/>
+			</movingPart>
+			<movingPart node="0>5|16|3|1" referencePoint="0>5|16|1|0|1|19"
+			            referenceFrame="0>5|16|1|0|1|19">
+				<translatingPart node="0>5|16|3|1|0"/>
+			</movingPart>
+			<movingPart node="0>5|16|1|0|1|21" referencePoint="0>5|16|1|0|1|0|0|17"
+			            referenceFrame="0>5|16|1|0|1|0|0|17">
+				<translatingPart node="0>5|16|1|0|1|21|0"/>
+			</movingPart>
+			<movingPart node="0>5|16|1|0|0|38" referencePoint="0>5|16|1|0|0|0|0|35"
+			            referenceFrame="0>5|16|1|0|0|0|0|35">
+				<translatingPart node="0>5|16|1|0|0|38|0"/>
+			</movingPart>
+			<movingPart node="0>5|16|11" referencePoint="0>5|16|1|0|0|43"
+			            referenceFrame="0>5|16|1|0|0|43" isActiveDirty="true" maxUpdateDistance="300"
+			            scaleZ="true" playSound="false"/>
+			<movingPart node="0>5|16|12" referencePoint="0>5|16|1|0|0|44"
+			            referenceFrame="0>5|16|1|0|0|44" isActiveDirty="true" maxUpdateDistance="300"
+			            scaleZ="true" playSound="false"/>
+			<movingPart node="0>5|16|13|0" referencePoint="0>5|16|1|0|1|24"
+			            referenceFrame="0>5|16|1|0|1|24" isActiveDirty="true" maxUpdateDistance="300"
+			            scaleZ="true" playSound="false"/>
+			<movingPart node="0>5|16|13|1" referencePoint="0>5|16|1|0|1|23"
+			            referenceFrame="0>5|16|1|0|1|23" isActiveDirty="true" maxUpdateDistance="300"
+			            scaleZ="true" playSound="false"/>
+			<movingPart node="0>5|47" referencePoint="0>5|16|21" referenceFrame="0>5|16|21"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>5|48" referencePoint="0>5|16|20" referenceFrame="0>5|16|20"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>5|49" referencePoint="0>5|16|19" referenceFrame="0>5|16|19"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+			<movingPart node="0>5|50" referencePoint="0>5|16|18" referenceFrame="0>5|16|18"
+			            isActiveDirty="true" maxUpdateDistance="300" scaleZ="true" playSound="false"/>
+		</movingParts>
+	</cylindered>
+
+	<!-- ==================== DASHBOARD & HONK ==================== -->
+	<dashboard>
+		<groups>
+			<group name="MOTOR_STARTING" isMotorStarting="true"/>
+			<group name="MOTOR_ACTIVE" isMotorStarting="false" isMotorRunning="true"/>
+		</groups>
+
+		<default>
+			<dashboard displayType="VISIBILITY" node="0>5|1|3|5|0" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="0>5|1|3|5|1" groups="MOTOR_STARTING"/>
+
+			<dashboard displayType="VISIBILITY" node="hudFillLevel" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="hudFillMass" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="hudWeightVolume" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="screen" groups="MOTOR_ACTIVE"/>
+		</default>
+	</dashboard>
+	<realDashboard fillTypeCategories="LIQUID SPRAYER LOC_LIQUIDS">
+		<dashboards>
+			<dashboard displayType="TEXT" valueType="fillLevel" node="hudFillLevel" textColor="0 0 0 1"
+			           hiddenColor="0.4 0.4 0.4 1" textSize="0.03" textMask="000000" font="DIGIT"
+			           groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="fillMass" node="hudFillMass" textColor="0 0 0 1"
+			           hiddenColor="0.4 0.4 0.4 1" textSize="0.022" textMask="000000" font="DIGIT"
+			           groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="fillDensity" node="hudWeightVolume"
+			           textColor="0 0 0 1" hiddenColor="0.4 0.4 0.4 1" textSize="0.006" textMask="0000.0"
+			           font="DIGIT" groups="MOTOR_ACTIVE"/>
+		</dashboards>
+	</realDashboard>
+	<turnOnVehicle turnOffIfNotAllowed="true">
+		<sounds>
+			<work template="DEFAULT_SPRAYER" pitchOffset="0.75" linkNode="0>"/>
+		</sounds>
+		<turnedAnimation name="startStopAnim"/>
+	</turnOnVehicle>
+	<honk>
+		<sound template="HONK_KRONE_BIGM" linkNode="0>"/>
+	</honk>
+	<honkConfigurations title="$l10n_configuration_honk">
+		<honkConfiguration name="$l10n_configuration_valueDefault" price="0"/>
+
+		<honkConfiguration name="$l10n_configuration_fendtHorn" price="300">
+			<extraOption honkSoundFilename="Specializations/horn_fendtCombine.ogg"/>
+			<extraOption honkSoundOuterRadius="80"/>
+			<extraOption honkSoundInnerRadius="20"/>
+			<objectChange node="0>5|71" visibilityActive="true"/>
+		</honkConfiguration>
+
+		<honkConfiguration name="$l10n_configuration_musicHorn" price="300">
+			<extraOption honkSoundFilename="Specializations/horn.ogg"/>
+			<extraOption honkSoundOuterRadius="80"/>
+			<extraOption honkSoundInnerRadius="20"/>
+			<objectChange node="0>5|71" visibilityActive="true"/>
+		</honkConfiguration>
+	</honkConfigurations>
+
+	<!-- ==================== MISCELLANEOUS ==================== -->
+	<wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+	<washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2"/>
+	<ai>
+		<areaMarkers leftNode="0>5|21|3" rightNode="0>5|21|4" backNode="0>5|21|5"/>
+		<collisionTrigger node="0>4"/>
+	</ai>
+
+	<!-- ==================== I3D MAPPINGS ==================== -->
+	<i3dMappings>
+		<i3dMapping id="screen" node="0>5|72|1"/>
+		<i3dMapping id="hudFillLevel" node="0>5|72|3"/>
+		<i3dMapping id="hudFillMass" node="0>5|72|4"/>
+		<i3dMapping id="hudWeightVolume" node="0>5|72|5"/>
+	</i3dMappings>
+
+</vehicle>

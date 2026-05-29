@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+	<text name="configuration_gpsTitle" text="Systeme de guidage"/>
+	<text name="configuration_value_gps" text="Avec"/>
+	<text name="ui_option_default" text="Sans"/>
+	<text name="input_IC_SPACE" text="Changer etat IC"/>
+	<text name="input_IC_MOUSE" text="Activer IC"/>
+	<text name="InteractiveControl_Off" text="Desactiver IC"/>
+	<text name="InteractiveControl_On" text="Activer IC"/>
+	<text name="ic_component_close" text="Fermer %s"/>
+	<text name="ic_component_open" text="Ouvrir %s"/>
+	<text name="configuration_honk" text="Klaxon"/>
+	<text name="configuration_fendtHorn" text="Avertisseur pneumatique Fendt"/>
+	<text name="configuration_musicHorn" text="Klaxon musical"/>
+	<text name="deur" text="Porte"/>
+	<text name="seat" text="Siege passager"/>
+	<text name="computer" text="Ordinateur"/>
+	<text name="ic_computer_mode1" text="%s Mode 1"/>
+	<text name="ic_computer_mode2" text="%s Mode 2"/>
+	<text name="steeringModeBackWheel" text="Direction roues arrieres"/>
+	<text name="input_SHOW_SSC_HUD" text="SSC: Afficher/masquer ATH"/>
+	<text name="input_SHOW_SSC_MOUSE" text="SSC: Curseur souris"/>
+	<text name="input_SSC_MOUSECLICK" text="SSC: Clic souris"/>
+	<text name="SSC_AUTOMATIC_MODE" text="MODE AUTOMATIQUE"/>
+	<text name="SSC_MANUAL_MODE" text="MODE MANUEL"/>
+</l10n>

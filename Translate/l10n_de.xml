@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+	<text name="configuration_gpsTitle" text="Leitsystem"/>
+	<text name="configuration_value_gps" text="Mit"/>
+	<text name="ui_option_default" text="Ohne"/>
+	<text name="input_IC_SPACE" text="IC-Status wechseln"/>
+	<text name="input_IC_MOUSE" text="IC aktivieren"/>
+	<text name="InteractiveControl_Off" text="IC deaktivieren"/>
+	<text name="InteractiveControl_On" text="IC aktivieren"/>
+	<text name="ic_component_close" text="Schliessen %s"/>
+	<text name="ic_component_open" text="Oeffnen %s"/>
+	<text name="configuration_honk" text="Hupe"/>
+	<text name="configuration_fendtHorn" text="Fendt Druckhorn"/>
+	<text name="configuration_musicHorn" text="Musikhupe"/>
+	<text name="deur" text="Tuer"/>
+	<text name="seat" text="Beifahrersitz"/>
+	<text name="computer" text="Computer"/>
+	<text name="ic_computer_mode1" text="%s Modus 1"/>
+	<text name="ic_computer_mode2" text="%s Modus 2"/>
+	<text name="steeringModeBackWheel" text="Hinterradlenkung"/>
+	<text name="input_SHOW_SSC_HUD" text="SSC: HUD ein/aus"/>
+	<text name="input_SHOW_SSC_MOUSE" text="SSC: Mauszeiger"/>
+	<text name="input_SSC_MOUSECLICK" text="SSC: Maus Klick"/>
+	<text name="SSC_AUTOMATIC_MODE" text="AUTOMATIK-MODUS"/>
+	<text name="SSC_MANUAL_MODE" text="MANUELLER MODUS"/>
+</l10n>

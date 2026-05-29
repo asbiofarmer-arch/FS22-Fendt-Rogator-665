@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="79">
+
+	<!-- ==================== MOD METADATA ==================== -->
+	<author>ASF GEM-PRO</author>
+	<version>1.0</version>
+	<title>
+		<en>FENDT Rogator 665</en>
+		<de>FENDT Rogator 665</de>
+		<fr>FENDT Rogator 665</fr>
+	</title>
+	<description>
+		<en><![CDATA[FENDT Rogator 665 - Heavy duty 4x4 self-propelled sprayer.
+Empty weight: 12.7 t | Tank capacity: 8000 L
+3 engine power levels from 300 HP to 422 HP.
+Designed for difficult terrain and intensive professional work.]]></en>
+		<de><![CDATA[FENDT Rogator 665 - Schwerer 4x4 Selbstfahrender Feldspritze.
+Leergewicht: 12.7 t | Tankvolumen: 8000 L
+3 Motorstufen von 300 PS bis 422 PS.
+Entwickelt für schwieriges Gelände und professionellen Einsatz.]]></de>
+		<fr><![CDATA[FENDT Rogator 665 - Pulvérisateur automoteur 4x4 lourd.
+Poids à vide: 12.7 t | Capacité du réservoir: 8000 L
+3 niveaux de puissance de 300 CV à 422 CV.
+Conçu pour les terrains difficiles et un usage professionnel intensif.]]></fr>
+	</description>
+
+	<iconFilename>Textures/icon.png</iconFilename>
+	<multiplayer supported="true"/>
+
+	<!-- ==================== LUA SOURCE FILES ==================== -->
+	<extraSourceFiles>
+		<sourceFile filename="Lua/SprayerSectionControl.lua"/>
+		<sourceFile filename="Lua/SprayerSectionControlHUD.lua"/>
+	</extraSourceFiles>
+
+	<!-- ==================== SPECIALIZATIONS ==================== -->
+	<specializations>
+		<specialization name="sprayerSectionControl" className="SprayerSectionControl"
+		                filename="Lua/SprayerSectionControl.lua"/>
+	</specializations>
+
+	<!-- ==================== VEHICLE TYPE ==================== -->
+	<vehicleTypes>
+		<type name="rogator" parent="selfPropelledSprayer">
+			<specialization name="sprayerSectionControl"/>
+		</type>
+	</vehicleTypes>
+
+	<!-- ==================== TRANSLATIONS ==================== -->
+	<l10n filenamePrefix="Translate/l10n"/>
+
+	<!-- ==================== ACTIONS & INPUTS ==================== -->
+	<actions>
+		<action name="IC_SPACE"/>
+		<action name="IC_MOUSE"/>
+		<action name="SHOW_SSC_HUD"/>
+		<action name="SHOW_SSC_MOUSE"/>
+		<action name="SSC_MOUSECLICK"/>
+	</actions>
+
+	<inputBindings>
+		<input name="IC_SPACE" key1="KEY_space" device="0" category="VEHICLE"/>
+		<input name="IC_MOUSE" key1="KEY_mouse2" device="0" category="VEHICLE"/>
+		<input name="SHOW_SSC_HUD" key1="KEY_right_shift KEY_s" device="0" category="VEHICLE"/>
+		<input name="SHOW_SSC_MOUSE" key1="KEY_right_ctrl KEY_s" device="0" category="VEHICLE"/>
+		<input name="SSC_MOUSECLICK" key1="KEY_mouse1" device="0" category="VEHICLE"/>
+	</inputBindings>
+
+	<!-- ==================== DEPENDENCIES ==================== -->
+	<dependencies>
+		<dependency optional="true">FS22_precisionFarming</dependency>
+	</dependencies>
+
+	<!-- ==================== STORE & BRANDING ==================== -->
+	<brands>
+		<brand name="FENDT" title="FENDT" image="brand_fendt.dds"/>
+	</brands>
+
+	<storeItems>
+		<storeItem xmlFilename="Vehicles/rogator.xml"/>
+	</storeItems>
+
+</modDesc>

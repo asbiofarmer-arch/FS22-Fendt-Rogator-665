@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<sounds>
+	<motorStart template="SPRAYER_MOTOR_START" file="Sounds/leeb_pt_start.ogg" linkNode="0>"/>
+	<motorStop template="SPRAYER_MOTOR_STOP" file="Sounds/leeb_pt_stop.ogg" linkNode="0>"/>
+
+	<motor template="SPRAYER_MOTOR_IDLE" file="Sounds/leeb_pt_idle_loop.ogg" linkNode="0>"/>
+	<motor template="SPRAYER_MOTOR_OFFLOAD_RUN" file="Sounds/leeb_pt_run_loop.ogg" linkNode="0>"/>
+    
+	<motor template="SPRAYER_MOTOR_ONLOAD_RUN" file="Sounds/leeb_pt_load_loop.ogg" linkNode="0>"/>
+
+	<gearbox template="DEFAULT_GEARBOX" file="$data/sounds/vehicles/transmission/transmission_cvtx_loop.wav" linkNode="0>"/>
+	<retarder template="DEFAULT_RETARDER" file="$data/sounds/vehicles/retarder/retarder_loop_01.wav" linkNode="0>"/>
+
+	<airCompressorStart template="BRAKE_COMPRESSOR_START" linkNode="0>"/>
+	<airCompressorStop template="BRAKE_COMPRESSOR_STOP" linkNode="0>"/>
+	<airCompressorRun template="BRAKE_COMPRESSOR_RUN" linkNode="0>"/>
+	<compressedAir template="BRAKE_SMALL" linkNode="0>"/>
+	<airRelease template="BRAKE_REGULATOR_VALVE" linkNode="0>"/>
+</sounds>

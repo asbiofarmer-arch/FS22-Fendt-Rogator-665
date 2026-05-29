@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "FS25-mods-workspace",
+			"path": "../../../Documents/GitHub/FS25-mods-workspace"
+		},
+		{
+			"name": "FS22-mods-workspace",
+			"path": "../../../Documents/GitHub/FS22-mods-workspace"
+		}
+	],
+	"settings": {}
+}

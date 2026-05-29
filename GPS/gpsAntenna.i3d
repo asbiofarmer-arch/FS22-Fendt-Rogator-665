@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<i3D name="gpsAntenna.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+	<Asset>
+		<Export program="GIANTS Editor 64bit" version="9.0.6"/>
+	</Asset>
+	<Files>
+		<File fileId="4" filename="$data/shaders/vehicleShader.xml"/>
+		<File fileId="2" filename="Textures/rogator665_normal.dds"/>
+		<File fileId="3" filename="Textures/rogator665_vmask.dds"/>
+	</Files>
+	<Materials>
+		<Material name="vario1000_mat" materialId="14" diffuseColor="0.498039 0.498039 0.498039 1" customShaderId="4" customShaderVariation="colorMask">
+			<Normalmap fileId="2"/>
+			<Glossmap fileId="3"/>
+			<CustomParameter name="colorMat0" value="0.0519 0.1922 0.0196 0"/>
+			<CustomParameter name="colorMat1" value="0.0189 0.1332 0.1975 1"/>
+			<CustomParameter name="colorMat2" value="0.0546 0.0546 0.0546 0"/>
+			<CustomParameter name="colorMat3" value="0.0987 0.0987 0.0987 1"/>
+			<CustomParameter name="colorMat4" value="0.0987 0.0987 0.0987 0"/>
+		</Material>
+	</Materials>
+	<Shapes externalShapesFile="gpsAntenna.i3d.shapes"/>
+	<Dynamics/>
+	<Scene>
+		<Shape shapeId="1" name="roofNewParts" translation="-3.37791e-05 3.69315 -0.754363" clipDistance="160" nodeId="425" materialIds="14" castsShadows="true" receiveShadows="true"/>
+	</Scene>
+</i3D>
