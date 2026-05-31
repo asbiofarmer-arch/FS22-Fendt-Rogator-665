@@ -12,29 +12,28 @@ CO ZROBIONO:
 - [DONE] Repo ustawione jako publiczne na GitHub
 - [DONE] Utworzono i wgrano CLAUDE.md (commit d959e3a)
 - [DONE] Utworzono TODO_Lista_ASF22_Fendt_Rogator_665.txt
-- [DONE] Omowiono strategię pracy (krok po kroku, bez carte blanche)
+- [DONE] Omowiono strategie pracy (krok po kroku, bez carte blanche)
+- [DONE] Weryfikacja 3xW plikow l10n (en, fr, de) — wszystkie klucze obecne
+- [DONE] Analiza przyczyny warningow IC_SPACE/IC_MOUSE
 
 PLIKI MODYFIKOWANE:
-- CLAUDE.md — utworzony od zera
+- CLAUDE.md — utworzony i zaktualizowany
+- TODO_Lista_ASF22_Fendt_Rogator_665.txt — utworzony
 
-BLEDY ZDIAGNOZOWANE:
-- BLAD 1: Missing l10n keys (input_IC_SPACE, input_IC_MOUSE,
-          input_SHOW_SSC_HUD, input_SHOW_SSC_MOUSE, input_SSC_MOUSECLICK)
-          Pliki: Translate/l10n_en.xml, l10n_de.xml, l10n_fr.xml
-- BLAD 2: SprayerSectionControl.lua linia 93 — wrong type Table vs Int
-- BLAD 3: dataS/scripts/vehicles/Vehicle.lua — zla sciezka
-
----
-
-W TRAKCIE:
-- [ ] Naprawa Bledu 1 — l10n missing keys
-      Nastepny krok: otworzyc Translate/l10n_en.xml
-      i dodac 5 brakujacych kluczy
+BLEDY ZDIAGNOZOWANE I STATUS:
+- BLAD 1: [KNOWN ISSUE] l10n warnings dla IC_SPACE, IC_MOUSE,
+          SHOW_SSC_HUD, SHOW_SSC_MOUSE, SSC_MOUSECLICK
+          Przyczyna: FS22 laduje modDesc.xml przed plikami l10n moda
+          Wplyw: kosmetyczny — mod dziala poprawnie
+          Akcja: monitorowac podczas dluzszego testu w grze
+- BLAD 2: [AKTYWNY] SprayerSectionControl.lua linia 93
+          wrong type Table vs Int — NASTEPNY KROK
+- BLAD 3: [DO ZBADANIA] dataS/scripts/vehicles/Vehicle.lua — zla sciezka
 
 ---
 
 DO ZROBIENIA — KOLEJNOSC:
-1. [ ] BLAD 1 — Dodac brakujace klucze l10n do 3 plikow (en, de, fr)
+1. [KNOWN ISSUE] BLAD 1 — monitorowac podczas testu w grze
 2. [ ] BLAD 2 — Naprawic SprayerSectionControl.lua linia 93
 3. [ ] BLAD 3 — Zbadac i naprawic sciezke dataS
 4. [ ] Sprawdzic kierunki oprysku na bomie w rogator.xml
@@ -43,8 +42,10 @@ DO ZROBIENIA — KOLEJNOSC:
 ---
 
 NOTATKI TECHNICZNE:
-- modDesc.xml wskazuje na Translate/l10n jako prefix
-- Brakujace klucze dotycza SprayerSectionControl i InteractiveControl
+- Wszystkie 3 pliki l10n (en, fr, de) zawieraja kompletne klucze
+- IC to zewnetrzny mod gracza — nie specialization w modzie
+- icButton x3 obecne w rogator.i3d — model gotowy na IC
+- rogator.xml nie ma sekcji interactiveControl — do rozważenia
 - Zasada: zawsze commit przed zmiana plikow (Git = siatka bezpieczenstwa)
 
 ---
@@ -52,4 +53,4 @@ NOTATKI TECHNICZNE:
 NASTEPNA SESJA — ZACZNIJ OD:
 1. Wklej CLAUDE.md
 2. Wklej ten plik TODO
-3. Powiedz: "Naprawiamy Blad 1 — l10n"
+3. Napisz: "Naprawiamy Blad 2 — SprayerSectionControl.lua linia 93"
