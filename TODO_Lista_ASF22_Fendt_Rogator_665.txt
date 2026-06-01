@@ -54,3 +54,17 @@ NASTEPNA SESJA — ZACZNIJ OD:
 1. Wklej CLAUDE.md
 2. Wklej ten plik TODO
 3. Napisz: "Naprawiamy Blad 2 — SprayerSectionControl.lua linia 93"
+
+SESJA 002 — 01.06.2026
+=======================
+
+CO ZROBIONO:
+- [DONE] Naprawa Bledu 2 — SprayerSectionControl.lua
+         Zmieniono 7 wywolań starego API xmlFile
+         hasXMLProperty → xmlFile:hasProperty
+         getXMLInt/String/Float → xmlFile:getInt/getString/getFloat
+         Commit: c53da83
+
+NASTEPNY KROK:
+- [ ] BLAD 3 — zbadac sciezke dataS/scripts/vehicles/Vehicle.lua
+- [ ] Test w grze — czy Blad 2 zniknal z log.txt
