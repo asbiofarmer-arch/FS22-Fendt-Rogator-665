@@ -110,7 +110,8 @@ function SprayerSectionControl:onLoad(savegame)
 			i = i + 1
 			local workAreaId = self.xmlFile:getInt(key .. "#workAreaId")
 			--local sprayType = getXMLInt(self.xmlFile, key.."#sprayType")
-			local effectNodes = StringUtil.splitString(" ", StringUtil.trim(self.xmlFile:getString(key .. "#effectNodeId")))
+			local effectNodeStr = self.xmlFile:getString(key .. "#effectNodeId") or ""
+			local effectNodes = string.split(string.trim(effectNodeStr), " ")
 			local testAreaStart = I3DUtil.indexToObject(self.components,
 				self.xmlFile:getString(key .. "#testAreaStartNode"), self.i3dMappings)
 			local testAreaWidth = I3DUtil.indexToObject(self.components,
@@ -122,8 +123,17 @@ function SprayerSectionControl:onLoad(savegame)
 				workAreaId = i
 			end
 			if workAreaId ~= nil and effectNodes ~= nil and testAreaStart ~= nil and testAreaWidth ~= nil and testAreaHeight ~= nil then
-				spec.sections[i] = { workAreaId = workAreaId, effectNodes = effectNodes, testAreaStart = testAreaStart, testAreaWidth =
-				testAreaWidth, testAreaHeight = testAreaHeight, active = true, workingWidth = workingWidth, id = i }
+				spec.sections[i] = {
+					workAreaId = workAreaId,
+					effectNodes = effectNodes,
+					testAreaStart = testAreaStart,
+					testAreaWidth =
+						testAreaWidth,
+					testAreaHeight = testAreaHeight,
+					active = true,
+					workingWidth = workingWidth,
+					id = i
+				}
 				self.spec_workArea.workAreas[workAreaId].sscId = i
 				spec.sections[i].sprayType = self.spec_workArea.workAreas[workAreaId].sprayType
 			else
@@ -212,19 +222,19 @@ function SprayerSectionControl:onUpdate(dt)
 						self:clearAITerrainDetailProhibitedRange()
 						self:addAITerrainDetailRequiredRange(g_currentMission.plowValue, g_currentMission.plowValue,
 							g_currentMission.terrainDetailTypeFirstChannel, g_currentMission
-						.terrainDetailTypeNumChannels)
+							.terrainDetailTypeNumChannels)
 						self:addAITerrainDetailRequiredRange(g_currentMission.cultivatorValue,
 							g_currentMission.cultivatorValue, g_currentMission.terrainDetailTypeFirstChannel,
 							g_currentMission.terrainDetailTypeNumChannels)
 						self:addAITerrainDetailRequiredRange(g_currentMission.sowingValue, g_currentMission.sowingValue,
 							g_currentMission.terrainDetailTypeFirstChannel, g_currentMission
-						.terrainDetailTypeNumChannels)
+							.terrainDetailTypeNumChannels)
 						self:addAITerrainDetailRequiredRange(g_currentMission.sowingWidthValue,
 							g_currentMission.sowingWidthValue, g_currentMission.terrainDetailTypeFirstChannel,
 							g_currentMission.terrainDetailTypeNumChannels)
 						self:addAITerrainDetailRequiredRange(g_currentMission.grassValue, g_currentMission.grassValue,
 							g_currentMission.terrainDetailTypeFirstChannel, g_currentMission
-						.terrainDetailTypeNumChannels)
+							.terrainDetailTypeNumChannels)
 						self:addAITerrainDetailProhibitedRange(sprayTypeDesc.groundType, sprayTypeDesc.groundType,
 							g_currentMission.sprayFirstChannel, g_currentMission.sprayNumChannels)
 						self:addAITerrainDetailProhibitedRange(g_currentMission.sprayLevelMaxValue,
