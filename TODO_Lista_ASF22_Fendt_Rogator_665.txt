@@ -68,3 +68,53 @@ CO ZROBIONO:
 NASTEPNY KROK:
 - [ ] BLAD 3 — zbadac sciezke dataS/scripts/vehicles/Vehicle.lua
 - [ ] Test w grze — czy Blad 2 zniknal z log.txt
+
+SESJA 003 — 01.06.2026
+=======================
+
+CO ZROBIONO:
+- [DONE] Analiza Bledu 3 — dataS/scripts/vehicles/Vehicle.lua
+         Przeszukano: Lua/*.lua, Specializations/*.lua, modDesc.xml
+         Wynik: blad NIE pochodzi z naszego moda
+         Dowod: blad o 15:41, mod laduje sie o 15:54 (13 minut pozniej)
+         Status: NOT OUR BUG
+
+PLIKI PRZESZUKANE (3xW):
+- Lua/loader.lua — czysty
+- Lua/SprayerSectionControl.lua — czysty
+- Specializations/*.lua — brak dataS
+- modDesc.xml — brak dataS
+
+PODSUMOWANIE WSZYSTKICH BLEDOW:
+- BLAD 1: [KNOWN ISSUE] l10n warnings — kosmetyczny, mod dziala
+- BLAD 2: [FIXED] SprayerSectionControl.lua — commit c53da83
+- BLAD 3: [NOT OUR BUG] dataS — pochodzi z innego moda w grze
+
+ODKRYCIA DODATKOWE:
+- ManureSystemVehicle.lua jest w Lua/ ale nie w modDesc.xml
+  Jest to plik dla wozow asenizacyjnych — nie dla opryskiwacza
+  Decyzja: zbadac i usunac lub pozostawic w nastepnej sesji
+- Nowa wersja SprayerSectionControl v1.0.0.0 zostala znaleziona
+  Decyzja: zbadac czy uzywac nowej wersji w nastepnej sesji
+- AddConfig.lua uzywa starego API hasXMLProperty
+  Decyzja: zbadac w nastepnej sesji
+
+---
+
+DO ZROBIENIA — KOLEJNOSC:
+1. [KNOWN ISSUE] BLAD 1 — monitorowac podczas testu w grze
+2. [FIXED] BLAD 2 — SprayerSectionControl.lua naprawiony
+3. [NOT OUR BUG] BLAD 3 — pochodzi z innego moda
+4. [ ] TEST W GRZE — uruchomic gre i sprawdzic nowy log.txt
+5. [ ] Zbadac ManureSystemVehicle.lua — usunac lub zostawic
+6. [ ] Zbadac nowa wersje SprayerSectionControl v1.0.0.0
+7. [ ] Zbadac AddConfig.lua — stare API hasXMLProperty
+8. [ ] Sprawdzic kierunki oprysku na bomie w rogator.xml
+9. [ ] Aktualizacja struktury Struktura_ASF22_Fendt_Rogator_665.txt
+
+---
+
+NASTEPNA SESJA — ZACZNIJ OD:
+1. Wklej CLAUDE.md
+2. Wklej ten plik TODO
+3. Napisz: "Test w grze — sprawdzamy nowy log.txt"
