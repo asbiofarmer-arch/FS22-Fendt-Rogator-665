@@ -118,3 +118,56 @@ NASTEPNA SESJA — ZACZNIJ OD:
 1. Wklej CLAUDE.md
 2. Wklej ten plik TODO
 3. Napisz: "Test w grze — sprawdzamy nowy log.txt"
+
+---
+
+MIGRACJA DO STRUKTURY CLAUDE CODE
+===================================
+Zrodlo: https://oclock.io/claude-md-structurer-projet-claude-code
+Data analizy: 01.06.2026
+
+ZASADA KLUCZOWA:
+- CLAUDE.md = krotki kompas, nie encyklopedia
+- Prompting is temporary, structure is permanent
+
+DOCELOWA STRUKTURA PROJEKTU:
+FS22-Fendt-Rogator-665/
+├── CLAUDE.md                    <- krotki, tylko co najwazniejsze
+├── .claude/
+│   └── skills/
+│       └── fs22-modding/
+│           └── SKILL.md         <- zasady FS22, API xmlFile, bledy
+├── docs/
+│   ├── architecture.md          <- struktura moda
+│   └── known-issues.md          <- poznane bledy i rozwiazania
+├── Lua/
+│   └── CLAUDE.md                <- zasady Lua FS22, ostrzezenia
+├── Specializations/
+│   └── CLAUDE.md                <- ostrzezenie: stare API AddConfig.lua
+└── TODO_Lista_ASF22_Fendt_Rogator_665.txt
+
+CO PRZENIESC Z CLAUDE.md DO SKILL.md:
+- Zasady FS22 API (xmlFile stare vs nowe)
+- Poznane bledy i ich rozwiazania
+- Komendy PowerShell najczesciej uzywane
+- Struktura XML rogator.xml — kluczowe tagi
+
+CO ZOSTAJE W CLAUDE.md (tylko):
+- Kim jestem (5 linii)
+- Zasady wspolpracy (11 punktow)
+- Srodowisko techniczne
+- Repo URL i lokalizacja
+- Aktywne bledy — tylko status
+- Jak zaczac nowa sesje
+
+CO DODAC NOWEGO:
+- .claude/skills/fs22-modding/SKILL.md  <- wiedza techniczna FS22
+- docs/known-issues.md                  <- BLAD 1,2,3 + rozwiazania
+- Lua/CLAUDE.md                         <- lokalne zasady
+- Specializations/CLAUDE.md             <- lokalne ostrzezenia
+
+PRIORYTET MIGRACJI: NISKI
+Wykonac po naprawieniu wszystkich bledow i tescie w grze.
+Nie przeszkadza w biezacej pracy.
+
+---
